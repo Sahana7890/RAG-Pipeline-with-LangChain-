@@ -1,0 +1,63 @@
+RAG PIPELINE PROJECT
+
+Introduction
+
+Retrieval-Augmented Generation, commonly called RAG, is an approach that combines information retrieval with large language models.
+
+A RAG system retrieves relevant information from a knowledge base and provides that information to a language model as context.
+
+This allows the language model to generate answers based on the provided documents.
+
+RAG Architecture
+
+A basic RAG architecture contains several stages.
+
+The first stage is document loading. Documents such as PDF and text files are loaded into the application.
+
+The second stage is document splitting. Large documents are divided into smaller chunks so that relevant sections can be retrieved efficiently.
+
+The third stage is embedding generation. Each document chunk is converted into a numerical vector representation.
+
+The fourth stage is vector storage. The embeddings are stored in a vector database such as ChromaDB.
+
+The fifth stage is retrieval. When a user asks a question, the question is compared with the stored vectors to identify relevant document chunks.
+
+The sixth stage is generation. The retrieved document chunks are provided to a large language model as context.
+
+The language model uses the retrieved context to generate an answer.
+
+ChromaDB
+
+ChromaDB is a vector database that can store document embeddings and support similarity-based retrieval.
+
+In this project, ChromaDB is used as the persistent vector store for the document corpus.
+
+LangChain
+
+LangChain provides components for building applications that use language models.
+
+In this project, LangChain is used for document loading, text splitting, embeddings, vector storage, retrieval, prompting, and model integration.
+
+Groq
+
+Groq provides access to large language models through an API.
+
+The RAG application uses a Groq-hosted language model to generate responses from retrieved context.
+
+Source Citations
+
+Source citations improve transparency by showing which documents were used to generate an answer.
+
+The application displays the names of retrieved documents after each answer.
+
+Limitations
+
+A RAG system depends on the quality of its documents, chunking strategy, embeddings, retrieval method, and language model.
+
+If relevant information is not present in the knowledge base, the system should not invent an answer.
+
+Evaluation
+
+A RAG system can be evaluated using retrieval quality, answer correctness, relevance, faithfulness, response latency, and source attribution.
+
+Improving chunk size, overlap, retrieval parameters, embedding models, prompts, and language models can improve the overall system.
